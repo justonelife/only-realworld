@@ -65,7 +65,8 @@
               "buildTarget": "only-realworld:build:production"
             },
             "development": {
-              "buildTarget": "only-realworld:build:development"
+              "buildTarget": "only-realworld:build:development",
+              "port": 4400
             }
           },
           "defaultConfiguration": "development"
