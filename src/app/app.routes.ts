@@ -8,7 +8,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    loadComponent: () => import('@shared/components/app-layout/app-layout.component').then(c => c.AppLayoutComponent),
+    loadComponent: () => import('@shared/themes').then(c => c.AppLayoutComponent),
     children: [
       {
         path: 'home',
