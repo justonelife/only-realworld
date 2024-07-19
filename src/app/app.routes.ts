@@ -9,6 +9,21 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () => import('@shared/components/app-layout/app-layout.component').then(c => c.AppLayoutComponent),
-    loadChildren: () => import('@features/home').then(r => r.routes),
+    children: [
+      {
+        path: 'home',
+        loadChildren: () => import('@features/home').then(r => r.routes)
+      },
+      {
+        path: 'login',
+        loadComponent: () => import('@features/unauthorized').then(c => c.LoginComponent),
+        title: 'Login'
+      },
+      {
+        path: 'register',
+        loadComponent: () => import('@features/unauthorized').then(c => c.RegisterComponent),
+        title: 'Register'
+      }
+    ]
   }
 ];
